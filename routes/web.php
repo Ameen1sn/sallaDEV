@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/dashboard', DashboardController::class)->name('dashboard');
+Route::get('/dashboard', DashboardController::class)->middleware(['auth'])->name('dashboard');
 
 Auth::routes();
 
